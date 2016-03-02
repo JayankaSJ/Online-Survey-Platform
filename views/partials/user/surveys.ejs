@@ -1,0 +1,24 @@
+
+
+<div class="class1" ng-repeat="survey in surveys">
+    <h4>
+      Survey Name :{{survey.name}}
+    </h4>
+    <br>
+    <h5>
+      Survey Description : {{survey.description}}
+    </h5>
+    <br>
+    <a ui-sref="survey.view({ id: survey._id })">
+        View
+    </a>
+    <a ui-sref="survey.analysis({ id: survey._id })">
+        Analysis
+    </a>
+    <br>
+    <a target="_blank" href="{{survey.link}}">
+     Link: {{survey.link}}
+    </a>
+    <hr>
+
+</div>

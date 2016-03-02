@@ -1,0 +1,18 @@
+<br>
+<br>
+<div class="userpage-tabpane">
+    <uib-tabset>
+        <uib-tab heading="Create your survey" href="#create">
+            <div role="tabpanel" class="tab-pane active" id="create">
+                <button type="button" style="margin-bottom: 15px" class="btn btn-default" ng-click="ctrl.save()">Save</button>
+                <button type="button" style="margin-bottom: 15px" class="btn btn-default" ng-click="ctrl.resetBuilder()">Reset</button>
+                <mw-form-builder api="ctrl.formBuilder" form-data="ctrl.formData" form-status="ctrl.formStatus" read-only="ctrl.builderReadOnly" on-image-selection="ctrl.onImageSelection()"></mw-form-builder>
+            </div>
+        </uib-tab>
+        <uib-tab  heading="View your survey" href="#view">
+            <div role="tabpanel" class="tab-pane" id="view">
+                <mw-form-viewer form-data="ctrl.formData"  form-status="ctrl.formStatus" options="ctrl.formOptions" api="ctrl.formViewer" response-data="ctrl.responseData" read-only="ctrl.viewerReadOnly" on-submit="ctrl.saveResponse()"></mw-form-viewer>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

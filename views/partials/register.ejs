@@ -1,0 +1,102 @@
+<div class="page-header">
+  <h1>Sign Up</h1>
+</div>
+
+<div ng-show="error" class="alert alert-danger row">
+  <span>{{ error.message }}</span>
+</div>
+
+<form name="form" ng-submit="register()" style="margin-top:30px;" novalidate>
+
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="First name" name="firstname" ng-model="user.firstname" required>
+    <div ng-show="form.$submitted || form.firstname.$touched">
+      <span ng-show="form.firstname.$error.required">Tell us your First name.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Last name" name="lastname" ng-model="user.lastname" required>
+    <div ng-show="form.$submitted || form.lastname.$touched">
+      <span ng-show="form.lastname.$error.required">Tell us your Last name.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" name="email" ng-model="user.email" required>
+    <div ng-show="form.$submitted || form.email.$touched">
+      <span ng-show="form.email.$error.required">Tell us your Email.</span>
+      <span ng-show="form.email.$error.email">This is not a valid email.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="UniversityID" name="universityid" ng-model="user.universityid" required>
+    <div ng-show="form.$submitted || form.universityid.$touched">
+      <span ng-show="form.universityid.$error.required">Tell us your UniversityID.</span>
+    </div>
+  </div>
+  <div class="form-group">
+      <select class="form-control" name="faculty" ng-model="user.faculty" ng-options="faculty for faculty in facultys" required>
+          <option>{{faculty.name}}</option>
+      </select>
+      <div ng-show="form.$submitted || form.faculty.$touched">
+        <span ng-show="form.faculty.$error.required">Select us your Faculty.</span>
+      </div>
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password" name="password" ng-model="user.password" required>
+    <div ng-show="form.$submitted || form.password.$touched">
+      <span ng-show="form.password.$error.required">Enter Password.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Conirm Password" name="confirmpassword" ng-model="user.confirmpassword" required>
+    <div ng-show="form.$submitted || form.confirmpassword.$touched">
+      <span ng-show="form.confirmpassword.$error.required">Again Enter Password.</span>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!--div class="form-box">
+    <div class="form-top">
+        <div class="form-top-center">
+            <h3>Sign Up Now</h3>
+        </div>
+    </div>
+    <div class="form-bottom">
+        <form role="form" action="" method="post" class="registration-form">
+
+        <div class="row"> 
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label class="sr-only" for="form-first-name">First name</label>
+                    <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label class="sr-only" for="form-last-name">Last name</label>
+                    <input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+        <label class="sr-only" for="form-email">Email</label>
+        <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+        </div>
+        <div class="form-group">
+        <label class="sr-only" for="form-username">Username</label>
+        <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+        </div>
+        <div class="form-group">
+        <label class="sr-only" for="form-password">Password</label>
+        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+        </div>
+        <div class="form-group">
+        <label class="sr-only" for="form-password">Confirm Password</label>
+        <input type="password" name="form-password" placeholder="Re enter Password..." class="form-password form-control" id="form-password">
+        </div>
+
+        <button type="submit" class="btn">Sign me up!</button>
+        </form>
+    </div>
+</div-->

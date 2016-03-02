@@ -1,0 +1,17 @@
+<br>
+<div class="userpage-tabpane">
+    <uib-tabset>
+        <uib-tab heading="Dashbord" ui-sref="administrator">
+            <div role="tabpanel" class="tab-pane active" id="dashbord">
+            </div>
+        </uib-tab>
+        <uib-tab heading="Notifications" ui-sref="administrator.notifications">
+            <div ui-view="administrator.notifications" role="tabpanel" class="tab-pane" id="notifications">
+            </div>
+        </uib-tab>
+        <uib-tab heading="Users" ui-sref="administrator.users">
+            <div ui-view="administrator.users" role="tabpanel" class="tab-pane" id="users">
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

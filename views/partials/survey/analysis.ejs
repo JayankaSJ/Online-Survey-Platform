@@ -1,0 +1,25 @@
+<div class="userpage-tabpane">
+    <uib-tabset>
+        <uib-tab heading="Analysis of Survey" href="#analysis">
+            <div role="tabpanel" class="tab-pane active" id="analysis">
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div ng-repeat="question in ctrl.questions">
+                            <p>Question {{$index + 1}}</p>
+                            <button ng-show="question.analysable" type="button" style="margin-bottom: 15px" class="btn btn-default" ng-click="ctrl.getsummery(question.id)">Genarate Report</button>
+                            <h5 ng-hide="question.analysable" >This question not analysable</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <c3-simple id="chart" config="chart"></c3-simple>
+                    </div>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="View your survey" href="#view">
+            <div role="tabpanel" class="tab-pane" id="view">
+                <!--<mw-form-viewer form-data="ctrl.formData"  form-status="ctrl.formStatus" options="ctrl.formOptions" api="ctrl.formViewer" response-data="ctrl.responseData" read-only="ctrl.viewerReadOnly" on-submit="ctrl.saveResponse()"></mw-form-viewer>-->
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>
